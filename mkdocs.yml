@@ -1,4 +1,6 @@
-site_name: Reahill's NoteBook
+site_name: Reahill's Personal Site
 site_url: https://reahill.github.io
+repo_url: https://github.com/reahill/reahill.github.io  # 指向你的仓库
 theme:
   name: material
+docs_dir: docs

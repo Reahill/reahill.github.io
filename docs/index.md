@@ -1,4 +1,4 @@
-# Welcome to Reahill's NoteBook
+# Welcome to Reahill's Personal Site
 
 For full documentation visit [mkdocs.org](https://www.mkdocs.org).
 
