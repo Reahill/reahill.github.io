@@ -84,6 +84,23 @@ plugins:
   - blog
 
 nav:
-  - 首页: index.md
+  - 首页: 
+    - index.md
+  - 数学: 
+    - math/index.md
+    - 线性代数: math/linear_algebra/linear_algebra.md
+    - 微积分（甲）Ⅰ: math/calculus_1/calculus_1.md
+    - 微积分（甲）Ⅱ: math/calculus_2/calculus_2.md
+  - 编程:
+    - programming/index.md
+    - C程序基础与设计: programming/C_language/C_language.md
+  - 物理: physics/index.md
+  - 工程基础: engineering_basics/index.md
+  - 电路与电子: circuits_and_electronics/index.md
+  - 控制与系统: control_and_systems/index.md
+  - 信号与信息处理: signal_and_information_processing/index.md
+  - 电力与电气: power_and_electrical/index.md
+  - 人工智能与智能系统: ai_and_intelligent_systems/index.md
+  - 实践与实训: practice_and_training/index.md
 
 docs_dir: docs
