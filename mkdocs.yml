@@ -86,6 +86,7 @@ plugins:
 nav:
   - 首页: 
     - index.md
+    - 观前提示: preview.md
   - 数学: 
     - math/index.md
     - 线性代数: math/linear_algebra/linear_algebra.md
