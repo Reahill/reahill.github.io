@@ -3,6 +3,7 @@ site_url: https://reahill.github.io
 repo_url: https://github.com/reahill/reahill.github.io
 theme:
   name: material
+  
   palette:
     # 1. 自动模式入口 - 不定义具体颜色，仅提供切换入口
     - media: "(prefers-color-scheme)"  # 匹配系统是否有主题偏好
@@ -27,10 +28,12 @@ theme:
       toggle:
         icon: material/weather-night    # 月亮图标
         name: 切换到系统自动模式       # 在深色模式下，按钮提示切换回自动
+  
   font:
-    text: Lora                # 设置正文字体
-    code: "Cousine"               # 设置正文字体和代码字体
+    false  # 禁用自定义字体，使用系统默认字体
+  
   language: zh                # 网站语言设置为中文
+  
   icon:
     repo: fontawesome/brands/github  # 使用 FontAwesome 的 GitHub 图标
     logo: material/robot-confused-outline  # 网站 Logo 图标
@@ -39,6 +42,7 @@ theme:
     top: material/chevron-up  # 返回顶部图标
     previous: material/chevron-left  # 上一页图标
     next: material/chevron-right  # 下一页图标
+  
   features:
     - navigation.instant     # 启用即时导航
     - navigation.instant.fetch  # 启用即时导航预取
@@ -55,10 +59,16 @@ theme:
     - navigation.indexes  # 启用索引导航
     - navigation.prev_next  # 启用上一页/下一页导航
     - navigation.top # 启用返回顶部导航
+    - navigation.footer   # 启用页脚导航
     - search.highlight        # 启用搜索高亮
     - search.suggest          # 启用搜索建议
     - toc.integrate          # 启用集成目录
     - toc.follow            # 启用跟随目录
+    - header.autohide         # 启用自动隐藏页眉
+
+extra_css:
+  - stylesheets/extra.css
+
 markdown_extensions:  
   - material.extensions.preview:  
       configurations:  
@@ -68,10 +78,12 @@ markdown_extensions:
               - customization.md  
               - insiders/changelog/*  
               - setup/extensions/*  
+
 plugins:
   - search  
   - blog
+
 nav:
   - 首页: index.md
-  - 关于我: about.md
+
 docs_dir: docs
