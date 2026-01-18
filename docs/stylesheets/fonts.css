@@ -1,0 +1,43 @@
+/* 1. 定义并引入霞鹜文楷字体 - 【路径和名称已根据你的文件修改】 */
+@font-face {
+    font-family: 'LXGW WenKai';
+    src: url('../fonts/LXGWWenKai-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* 2. 基础字体设置：中文默认用霞鹜文楷 */
+body {
+    font-family: 'LXGW WenKai', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-weight: 400;
+}
+
+/* 3. 设置英文及代码使用 Consolas，中文回退到霞鹜文楷 */
+body,
+input,
+button,
+textarea {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', 'LXGW WenKai', monospace;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: Consolas, 'LXGW WenKai', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* 4. 确保所有代码区域使用 Consolas */
+code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace !important;
+}
+
+pre, pre code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace !important;
+}
+
+.md-typeset pre > code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace !important;
+}
+
+.md-typeset h1:first-of-type {
+    display: none !important;
+}
+
