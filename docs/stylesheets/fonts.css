@@ -1,4 +1,6 @@
-/* 1. 定义并引入霞鹜文楷字体 - 【路径和名称已根据你的文件修改】 */
+/* 字体样式 */
+
+/* 1. 定义并引入霞鹜文楷字体 */
 @font-face {
     font-family: 'LXGW WenKai';
     src: url('../fonts/LXGWWenKai-Regular.ttf') format('truetype');
@@ -38,6 +40,5 @@ pre, pre code {
 }
 
 .md-typeset h1:first-of-type {
-    display: none !important;
+  display: none !important;
 }
-
