@@ -5,9 +5,7 @@ MathJax.Hub.Config({
     displayMath: [['$$', '$$'], ['\\[', '\\]']],
     processEscapes: true,
     processEnvironments: true,
-    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-    processClass: 'arithmatex',
-    ignoreClass: 'tex2jax_ignore'
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
   },
   'HTML-CSS': {
     scale: 110,
@@ -30,26 +28,25 @@ MathJax.Hub.Config({
   }
 });
 
-// 监听 MkDocs 页面切换事件
+MathJax.Hub.Queue(['Typeset', MathJax.Hub]);
+
 if (typeof document$ !== 'undefined') {
   document$.subscribe(function() {
     MathJax.Hub.Queue(['Typeset', MathJax.Hub]);
   });
 }
 
-// 监听页面导航变化（备用方案）
 document.addEventListener('DOMContentLoaded', function() {
-  const observer = new MutationObserver(function(mutations) {
-    mutations.forEach(function(mutation) {
-      if (mutation.addedNodes.length > 0) {
-        MathJax.Hub.Queue(['Typeset', MathJax.Hub]);
-      }
-    });
-  });
-  
-  // 观察主要内容区域
   const contentArea = document.querySelector('.md-content');
   if (contentArea) {
+    const observer = new MutationObserver(function(mutations) {
+      mutations.forEach(function(mutation) {
+        if (mutation.addedNodes.length > 0) {
+          MathJax.Hub.Queue(['Typeset', MathJax.Hub]);
+        }
+      });
+    });
+    
     observer.observe(contentArea, {
       childList: true,
       subtree: true
