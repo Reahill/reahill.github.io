@@ -15,7 +15,7 @@
 
 <ul>
 <li><strong>【学习日志】</strong>：记载了攻略过程中的实时笔记、心得与碎念。</li>
-<li><strong>【蓝图碎片】</strong>：部分课程课本（PDF格式）。</li>
+<li><strong>【蓝图碎片】</strong>：可下载的课本纵向梳理（PDF格式）。</li>
 </ul>
 </div>
 
@@ -36,7 +36,7 @@
 
 <div class="quest-item">
 <span class="quest-item-number">3.</span>
-<span class="quest-item-text">（可选）提交你的<strong>【心得纸条】</strong>或<strong>【新路线发现】</strong></span>
+<span class="quest-item-text">（可选）提交你的<strong>【新路线发现】</strong></span>
 <span class="quest-item-quote">「要一起… 让这个攻略变得更完整吗？」</span>
 </div>
 </div>

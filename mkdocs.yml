@@ -3,6 +3,7 @@ site_description: Reahill的大脑外置。
 site_author: Reahill
 site_url: https://reahill.github.io
 repo_url: https://github.com/reahill/reahill.github.io
+
 theme:
   name: material
   features:
@@ -62,14 +63,16 @@ theme:
     menu: material/menu  # 菜单图标
     close: material/close  # 关闭图标
     top: material/chevron-up  # 返回顶部图标
-
+    previous: material/chevron-left  # 上一页图标
+    next: material/chevron-right  # 下一页图标
+  
 extra_css:
   - stylesheets/fonts.css
   - stylesheets/mathjax.css
   - stylesheets/quest-panel.css
   - stylesheets/download-btn.css
-  - stylesheets/smooth-scroll.css  # 自定义字体样式文件
-
+  - stylesheets/smooth-scroll.css
+  
 extra_javascript:
   - javascripts/mathjax-config.html
   - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-MML-AM_CHTML
@@ -111,7 +114,6 @@ markdown_extensions:
   - pymdownx.arithmatex:
       generic: true
 
-
 plugins:
   - search  
   - blog
@@ -123,12 +125,24 @@ nav:
     - 数学公式测试: test_math.md
   - 数学: 
     - math/index.md
-    - 线性代数: math/linear_algebra/linear_algebra.md
-    - 微积分（甲）Ⅰ: math/calculus_1/calculus_1.md
-    - 微积分（甲）Ⅱ: math/calculus_2/calculus_2.md
+    - 线性代数: 
+      - math/linear_algebra/index.md
+      - 纵向梳理: math/linear_algebra/vertical.md
+      - 横向梳理: math/linear_algebra/horizontal.md
+    - 微积分（甲）Ⅰ: 
+      - math/calculus_1/index.md
+      - 纵向梳理: math/calculus_1/vertical.md
+      - 横向梳理: math/calculus_1/horizontal.md
+    - 微积分（甲）Ⅱ: 
+      - math/calculus_2/index.md
+      - 纵向梳理: math/calculus_2/vertical.md
+      - 横向梳理: math/calculus_2/horizontal.md
   - 编程:
     - programming/index.md
-    - C程序基础与设计: programming/C_language/C_language.md
+    - C程序基础与设计: 
+      - programming/C_language/index.md
+      - 纵向梳理: programming/C_language/vertical.md
+      - 横向梳理: programming/C_language/horizontal.md
   - 物理: physics/index.md
   - 工程基础: engineering_basics/index.md
   - 电路与电子: circuits_and_electronics/index.md
