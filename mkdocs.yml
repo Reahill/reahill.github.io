@@ -6,6 +6,7 @@ repo_url: https://github.com/reahill/reahill.github.io
 
 theme:
   name: material
+  custom_dir: docs/overrides
   features:
     - navigation.instant  # 启用即时导航
     - navigation.tracking  # 启用导航跟踪
@@ -61,8 +62,7 @@ extra_css:
   - stylesheets/smooth-scroll.css
   
 extra_javascript:
-  - javascripts/mathjax-config.html
-  - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-MML-AM_CHTML
+  - javascripts/mathjax-lazy.js
 
 markdown_extensions:  
   - admonition
@@ -100,7 +100,8 @@ nav:
   - 首页: 
     - index.md
     - 观前提示: preview.md
-    - 数学公式测试: test_math.md
+    - 数学公式测试: test/test_math.md
+    - 下载测试: test/test_download.md
   - 数学: 
     - math/index.md
     - 微积分（甲）Ⅱ: math/calculus_2/index.md
