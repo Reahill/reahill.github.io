@@ -1,5 +1,3 @@
 site/
 # Ignore large PDF files
 docs/textbooks/**/*.pdf
-# Ignore large font files
-docs/fonts/**/*.ttf
