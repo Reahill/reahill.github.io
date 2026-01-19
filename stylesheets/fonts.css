@@ -6,6 +6,7 @@
     src: url('../fonts/LXGWWenKai-Regular.ttf') format('truetype');
     font-weight: 400;
     font-style: normal;
+    font-display: fallback;
 }
 
 /* 2. 基础字体设置：中文默认用霞鹜文楷 */

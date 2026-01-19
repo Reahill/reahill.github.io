@@ -9,10 +9,6 @@
          <lastmod>2026-01-19</lastmod>
     </url>
     <url>
-         <loc>https://reahill.github.io/test_math/</loc>
-         <lastmod>2026-01-19</lastmod>
-    </url>
-    <url>
          <loc>https://reahill.github.io/math/</loc>
          <lastmod>2026-01-19</lastmod>
     </url>
@@ -22,6 +18,14 @@
     </url>
     <url>
          <loc>https://reahill.github.io/programming/</loc>
+         <lastmod>2026-01-19</lastmod>
+    </url>
+    <url>
+         <loc>https://reahill.github.io/test/test_download/</loc>
+         <lastmod>2026-01-19</lastmod>
+    </url>
+    <url>
+         <loc>https://reahill.github.io/test/test_math/</loc>
          <lastmod>2026-01-19</lastmod>
     </url>
 </urlset>
