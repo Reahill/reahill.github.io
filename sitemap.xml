@@ -2,70 +2,106 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://reahill.github.io/</loc>
-         <lastmod>2026-01-17</lastmod>
+         <lastmod>2026-01-19</lastmod>
     </url>
     <url>
          <loc>https://reahill.github.io/preview/</loc>
-         <lastmod>2026-01-17</lastmod>
+         <lastmod>2026-01-19</lastmod>
+    </url>
+    <url>
+         <loc>https://reahill.github.io/test_math/</loc>
+         <lastmod>2026-01-19</lastmod>
     </url>
     <url>
          <loc>https://reahill.github.io/ai_and_intelligent_systems/</loc>
-         <lastmod>2026-01-17</lastmod>
+         <lastmod>2026-01-19</lastmod>
     </url>
     <url>
          <loc>https://reahill.github.io/blog/</loc>
-         <lastmod>2026-01-17</lastmod>
+         <lastmod>2026-01-19</lastmod>
     </url>
     <url>
          <loc>https://reahill.github.io/circuits_and_electronics/</loc>
-         <lastmod>2026-01-17</lastmod>
+         <lastmod>2026-01-19</lastmod>
     </url>
     <url>
          <loc>https://reahill.github.io/control_and_systems/</loc>
-         <lastmod>2026-01-17</lastmod>
+         <lastmod>2026-01-19</lastmod>
     </url>
     <url>
          <loc>https://reahill.github.io/engineering_basics/</loc>
-         <lastmod>2026-01-17</lastmod>
+         <lastmod>2026-01-19</lastmod>
     </url>
     <url>
          <loc>https://reahill.github.io/math/</loc>
-         <lastmod>2026-01-17</lastmod>
+         <lastmod>2026-01-19</lastmod>
     </url>
     <url>
-         <loc>https://reahill.github.io/math/calculus_1/calculus_1/</loc>
-         <lastmod>2026-01-17</lastmod>
+         <loc>https://reahill.github.io/math/calculus_1/</loc>
+         <lastmod>2026-01-19</lastmod>
     </url>
     <url>
-         <loc>https://reahill.github.io/math/calculus_2/calculus_2/</loc>
-         <lastmod>2026-01-17</lastmod>
+         <loc>https://reahill.github.io/math/calculus_1/horizontal/</loc>
+         <lastmod>2026-01-19</lastmod>
     </url>
     <url>
-         <loc>https://reahill.github.io/math/linear_algebra/linear_algebra/</loc>
-         <lastmod>2026-01-17</lastmod>
+         <loc>https://reahill.github.io/math/calculus_1/vertical/</loc>
+         <lastmod>2026-01-19</lastmod>
+    </url>
+    <url>
+         <loc>https://reahill.github.io/math/calculus_2/</loc>
+         <lastmod>2026-01-19</lastmod>
+    </url>
+    <url>
+         <loc>https://reahill.github.io/math/calculus_2/horizontal/</loc>
+         <lastmod>2026-01-19</lastmod>
+    </url>
+    <url>
+         <loc>https://reahill.github.io/math/calculus_2/vertical/</loc>
+         <lastmod>2026-01-19</lastmod>
+    </url>
+    <url>
+         <loc>https://reahill.github.io/math/linear_algebra/</loc>
+         <lastmod>2026-01-19</lastmod>
+    </url>
+    <url>
+         <loc>https://reahill.github.io/math/linear_algebra/horizontal/</loc>
+         <lastmod>2026-01-19</lastmod>
+    </url>
+    <url>
+         <loc>https://reahill.github.io/math/linear_algebra/vertical/</loc>
+         <lastmod>2026-01-19</lastmod>
     </url>
     <url>
          <loc>https://reahill.github.io/physics/</loc>
-         <lastmod>2026-01-17</lastmod>
+         <lastmod>2026-01-19</lastmod>
     </url>
     <url>
          <loc>https://reahill.github.io/power_and_electrical/</loc>
-         <lastmod>2026-01-17</lastmod>
+         <lastmod>2026-01-19</lastmod>
     </url>
     <url>
          <loc>https://reahill.github.io/practice_and_training/</loc>
-         <lastmod>2026-01-17</lastmod>
+         <lastmod>2026-01-19</lastmod>
     </url>
     <url>
          <loc>https://reahill.github.io/programming/</loc>
-         <lastmod>2026-01-17</lastmod>
+         <lastmod>2026-01-19</lastmod>
     </url>
     <url>
-         <loc>https://reahill.github.io/programming/C_language/C_language/</loc>
-         <lastmod>2026-01-17</lastmod>
+         <loc>https://reahill.github.io/programming/C_language/</loc>
+         <lastmod>2026-01-19</lastmod>
+    </url>
+    <url>
+         <loc>https://reahill.github.io/programming/C_language/horizontal/</loc>
+         <lastmod>2026-01-19</lastmod>
+    </url>
+    <url>
+         <loc>https://reahill.github.io/programming/C_language/vertical/</loc>
+         <lastmod>2026-01-19</lastmod>
     </url>
     <url>
          <loc>https://reahill.github.io/signal_and_information_processing/</loc>
-         <lastmod>2026-01-17</lastmod>
+         <lastmod>2026-01-19</lastmod>
     </url>
 </urlset>

@@ -1,0 +1,35 @@
+/* 平滑滚动效果 */
+
+/* 为所有锚点链接添加平滑滚动 */
+.md-typeset a[href^="#"] {
+  scroll-behavior: smooth !important;
+  scroll-padding-top: 80px !important;
+}
+
+/* 为目录链接添加平滑滚动 */
+.md-nav__link {
+  scroll-behavior: smooth !important;
+  scroll-padding-top: 80px !important;
+}
+
+/* 为侧边栏导航链接添加平滑滚动 */
+.md-nav__item {
+  scroll-behavior: smooth !important;
+  scroll-padding-top: 80px !important;
+}
+
+/* 为表格目录链接添加平滑滚动 */
+.md-typeset .toc a {
+  scroll-behavior: smooth !important;
+  scroll-padding-top: 80px !important;
+  transition: color 0.2s ease !important;
+}
+
+.md-typeset .toc a:hover {
+  color: #4a9eff !important;
+}
+
+/* 深色模式下的目录链接 */
+[data-md-color-scheme="slate"] .md-typeset .toc a:hover {
+  color: #58a6ff !important;
+}

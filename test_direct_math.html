@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>直接数学公式测试</title>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            },
+            svg: {
+                fontCache: 'global'
+            }
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body>
+    <h1>直接数学公式测试</h1>
+    
+    <h2>行内公式</h2>
+    <p>这是一个行内公式：$a_{11}x_1 + a_{12}x_2 = b_1$。</p>
+    <p>另一个行内公式：$E = mc^2$。</p>
+    
+    <h2>块级公式</h2>
+    <p>这是一个块级公式：</p>
+    <div>
+        $$
+        \sum_{i=1}^{n} i = \frac{n(n+1)}{2}
+        $$
+    </div>
+    
+    <p>另一个块级公式：</p>
+    <div>
+        $$
+        \int_{-\infty}^{\infty} e^{-x^2} dx = \sqrt{\pi}
+        $$
+    </div>
+</body>
+</html>
