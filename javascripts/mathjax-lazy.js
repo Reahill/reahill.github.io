@@ -4,8 +4,6 @@
   let mathJaxLoaded = false;
   let mathJaxLoading = false;
   let currentPath = '';
-  let checkAttempts = 0;
-  const MAX_CHECK_ATTEMPTS = 10;
   
   function getPagePath() {
     return window.location.pathname + window.location.search + window.location.hash;
@@ -21,23 +19,36 @@
       return false;
     }
     
+    const arithmatexElements = contentArea.querySelectorAll('.arithmatex');
+    if (arithmatexElements.length > 0) {
+      console.log('MathJax: Found', arithmatexElements.length, 'arithmatex elements');
+      return true;
+    }
+    
     const content = contentArea.innerHTML;
     console.log('MathJax: Checking content, length:', content.length);
     
     const mathPatterns = [
       /\$\$[\s\S]*?\$\$/,
       /\$[^$\n]+?\$/,
-      /\\\[\\\]/,
-      /\\\(\\\)/,
+      /\\\[[\s\S]*?\\\]/,
+      /\\\([\s\S]*?\\\)/,
       /\\begin\{equation\}/,
       /\\begin\{align\}/,
       /\\begin\{gather\}/,
       /\\begin\{matrix\}/,
       /\\begin\{pmatrix\}/,
+      /\\begin\{bmatrix\}/,
+      /\\begin\{Bmatrix\}/,
+      /\\begin\{vmatrix\}/,
+      /\\begin\{Vmatrix\}/,
       /\\frac\{/,
       /\\sum\{/,
       /\\int\{/,
-      /\\sqrt\{/
+      /\\sqrt\{/,
+      /\\prod\{/,
+      /\\lim\{/,
+      /\\binom\{/
     ];
     
     for (const pattern of mathPatterns) {
@@ -57,18 +68,64 @@
     }
     
     mathJaxLoading = true;
-    console.log('MathJax: Loading on demand...');
+    console.log('MathJax: Loading MathJax 3.x...');
+    
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true,
+        processEnvironments: true,
+        processRefs: true,
+        tags: 'ams',
+        tagSide: 'right',
+        tagIndent: '0.8em',
+        useLabelIds: true,
+        multlineWidth: '85%',
+        maxMacros: 10000,
+        maxBuffer: 5 * 1024,
+        formatError: (jax, err) => {
+          console.warn('MathJax TeX error:', err.message);
+          jax.formatError(err);
+        }
+      },
+      mml: {
+        parseError: (jax, err) => {
+          console.warn('MathJax MathML error:', err.message);
+        }
+      },
+      startup: {
+        ready: () => {
+          console.log('MathJax: Startup ready');
+          MathJax.startup.defaultReady();
+          renderMath();
+        }
+      },
+      svg: {
+        fontCache: 'global'
+      },
+      chtml: {
+        displayAlign: 'center',
+        displayIndent: '0'
+      },
+      options: {
+        enableAssistiveMml: false,
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code', 'nav', 'footer'],
+        ignoreHtmlClass: 'tex2jax_ignore|no-math',
+        processHtmlClass: 'arithmatex|tex2jax_process',
+        enableMenu: false
+      }
+    };
     
     return new Promise((resolve, reject) => {
       const script = document.createElement('script');
-      script.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
       script.async = true;
       
       script.onload = function() {
-        console.log('MathJax: Loaded successfully');
+        console.log('MathJax 3.x: Loaded successfully');
         mathJaxLoaded = true;
         mathJaxLoading = false;
-        configureMathJax();
         resolve();
       };
       
@@ -82,59 +139,45 @@
     });
   }
   
-  function configureMathJax() {
-    if (typeof MathJax !== 'undefined' && MathJax.Hub) {
-      console.log('MathJax: Configuring...');
-      MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [['$', '$'], ['\\(', '\\)']],
-          displayMath: [['$$', '$$'], ['\\[', '\\]']],
-          processEscapes: true,
-          processEnvironments: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-        },
-        'HTML-CSS': {
-          scale: 110,
-          minScaleAdjust: 50,
-          preferredFont: 'TeX',
-          availableFonts: ['TeX'],
-          webFont: 'TeX',
-          imageFont: null,
-          styles: {
-            '.MathJax_Display': {
-              'margin': '1em 0',
-              'text-align': 'center'
-            }
-          }
-        },
-        SVG: {
-          scale: 110,
-          minScaleAdjust: 50,
-          font: 'TeX'
+  function renderMath() {
+    if (mathJaxLoaded && typeof MathJax !== 'undefined' && MathJax.typesetPromise) {
+      console.log('MathJax: Rendering with typesetPromise...');
+      
+      const arithmatexElements = document.querySelectorAll('.arithmatex');
+      console.log('MathJax: Processing', arithmatexElements.length, 'arithmatex elements');
+      
+      MathJax.typesetPromise(arithmatexElements).then(() => {
+        console.log('MathJax: Rendering completed');
+      }).catch(err => {
+        console.warn('MathJax: Rendering error:', err);
+      });
+    } else if (mathJaxLoaded && typeof MathJax !== 'undefined' && MathJax.typeset) {
+      console.log('MathJax: Rendering with typeset...');
+      const arithmatexElements = document.querySelectorAll('.arithmatex');
+      console.log('MathJax: Processing', arithmatexElements.length, 'arithmatex elements');
+      MathJax.typeset(arithmatexElements);
+    } else if (mathJaxLoaded && typeof MathJax !== 'undefined' && MathJax.startup) {
+      console.log('MathJax: Starting up...');
+      MathJax.startup.promise.then(() => {
+        const arithmatexElements = document.querySelectorAll('.arithmatex');
+        console.log('MathJax: Processing', arithmatexElements.length, 'arithmatex elements');
+        if (MathJax.typesetPromise) {
+          MathJax.typesetPromise(arithmatexElements);
+        } else if (MathJax.typeset) {
+          MathJax.typeset(arithmatexElements);
         }
       });
-      
-      MathJax.Hub.Register.StartupHook('End', function() {
-        console.log('MathJax: Configured and ready');
-        renderMath();
-      });
+    } else {
+      console.log('MathJax: Not ready for rendering');
     }
   }
   
-  function renderMath() {
-    if (mathJaxLoaded && typeof MathJax !== 'undefined' && MathJax.Hub) {
-      console.log('MathJax: Rendering...');
-      MathJax.Hub.Queue(['Typeset', MathJax.Hub]);
-    }
-  }
-  
-  function checkAndLoadMathJax(delay = 0) {
+  function checkAndLoadMathJax(delay = 0, forceCheck = false) {
     const newPath = getPagePath();
     console.log('MathJax: Checking path:', newPath, 'Current path:', currentPath);
     
-    if (newPath !== currentPath) {
+    if (newPath !== currentPath || forceCheck) {
       currentPath = newPath;
-      checkAttempts = 0;
       
       setTimeout(() => {
         if (hasMathContent()) {
@@ -161,7 +204,7 @@
         mutations.forEach(function(mutation) {
           if (mutation.addedNodes.length > 0) {
             console.log('MathJax: DOM changed, checking...');
-            checkAndLoadMathJax(300);
+            checkAndLoadMathJax(300, true);
           }
         });
       });
@@ -177,18 +220,49 @@
   function setupEventListeners() {
     window.addEventListener('hashchange', function() {
       console.log('MathJax: Hash changed');
-      checkAndLoadMathJax(300);
+      checkAndLoadMathJax(300, true);
     });
     
     window.addEventListener('popstate', function() {
       console.log('MathJax: Popstate');
-      checkAndLoadMathJax(300);
+      checkAndLoadMathJax(300, true);
     });
     
     document.addEventListener('visibilitychange', function() {
       if (document.visibilityState === 'visible') {
         console.log('MathJax: Page visible');
-        checkAndLoadMathJax(300);
+        checkAndLoadMathJax(300, true);
+      }
+    });
+    
+    // Listen for Material theme navigation events
+    document.addEventListener('DOMContentLoaded', function() {
+      // Check for instant navigation
+      const observer = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+          if (mutation.addedNodes.length > 0) {
+            // Check if new content contains math
+            const hasNewMath = Array.from(mutation.addedNodes).some(node => {
+              return node.nodeType === Node.ELEMENT_NODE && 
+                     (node.querySelector('.arithmatex') || 
+                      node.classList.contains('arithmatex') ||
+                      /\$\$[\s\S]*?\$\$|\$[^$\n]+?\$|\\\[[\s\S]*?\\\]|\\\([\s\S]*?\\\)/.test(node.textContent || ''));
+            });
+            if (hasNewMath) {
+              console.log('MathJax: New math content detected via navigation');
+              checkAndLoadMathJax(100, true);
+            }
+          }
+        });
+      });
+      
+      // Observe the main content area
+      const mainContent = document.querySelector('.md-content') || document.querySelector('.md-main__inner') || document.body;
+      if (mainContent) {
+        observer.observe(mainContent, {
+          childList: true,
+          subtree: true
+        });
       }
     });
   }
@@ -201,7 +275,8 @@
       document.addEventListener('DOMContentLoaded', function() {
         console.log('MathJax: DOM loaded');
         setTimeout(() => {
-          checkAndLoadMathJax(500);
+          // Force check on initial page load
+          checkAndLoadMathJax(500, true);
           setupObservers();
           setupEventListeners();
         }, 100);
@@ -209,7 +284,8 @@
     } else {
       console.log('MathJax: Document ready');
       setTimeout(() => {
-        checkAndLoadMathJax(500);
+        // Force check on initial page load
+        checkAndLoadMathJax(500, true);
         setupObservers();
         setupEventListeners();
       }, 100);
@@ -218,7 +294,7 @@
     if (typeof document$ !== 'undefined') {
       document$.subscribe(function() {
         console.log('MathJax: Document$ event');
-        checkAndLoadMathJax(500);
+        checkAndLoadMathJax(500, true);
       });
     }
   }
