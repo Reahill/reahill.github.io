@@ -1,0 +1,7 @@
+body {
+      font-family: "JetBrains Mono", "LXGW WenKai", monospace, sans-serif;
+    }
+
+:root {
+    --md-code-font: "Consolas"
+}
