@@ -6,60 +6,50 @@ repo_url: https://github.com/reahill/reahill.github.io
 
 theme:
   name: material
-  custom_dir: docs/overrides
   features:
-    - navigation.instant  # 启用即时导航
-    - navigation.tracking  # 启用导航跟踪
-    - navigation.tabs # 启用标签导航
-    - navigation.top        # 启用返回顶部按钮
-    - navigation.sections    # 启用页面内导航分区
-    - navigation.expand      # 启用导航展开
-    - navigation.smooth_scroll  # 启用平滑滚动
-    - search.highlight        # 启用搜索高亮
-    - search.suggest          # 启用搜索建议
-    - toc.follow            # 启用跟随目录
-    - content.code.highlight  # 启用代码高亮
-    - content.code.copy      # 启用代码复制按钮
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.top
+    - navigation.sections
+    - navigation.expand
+    - search.highlight
+    - search.suggest
+    - toc.follow
+    - content.code.highlight
+    - content.code.copy
   palette:
 
-    # 1. 浅色模式的具体配色
-    - media: "(prefers-color-scheme: light)"  # 匹配系统浅色模式
-      scheme: default                  # 使用浅色基础方案
-      primary: black                   # 主色调：黑色
-      accent: blue               # 强调色：蓝色
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: black
+      accent: blue
       toggle:
-        icon: material/weather-sunny    # 太阳图标
-        name: 切换到深色模式           # 在浅色模式下，按钮提示切换至深色
+        icon: material/weather-sunny
+        name: 切换到深色模式
 
-    # 2. 深色模式的具体配色
     - media: "(prefers-color-scheme: dark)"
-      scheme: slate                    # 使用深色基础方案
-      primary: black             # 主色调：黑色
-      accent: indigo                    # 深色模式下，强调色可微调为更亮的蓝色
+      scheme: slate
+      primary: black
+      accent: indigo
       toggle:
-        icon: material/weather-night    # 月亮图标
-        name: 切换到系统自动模式       # 在深色模式下，按钮提示切换回自动
-  
-  font:
-    false  # 禁用自定义字体，使用系统默认字体
-  
-  language: zh                # 网站语言设置为中文
-  
+        icon: material/weather-night
+        name: 切换到系统自动模式
+  language: zh
   icon:
-    repo: fontawesome/brands/github  # 使用 FontAwesome 的 GitHub 图标
-    logo: material/robot-confused-outline  # 网站 Logo 图标
-    menu: material/menu  # 菜单图标
-    close: material/close  # 关闭图标
-    top: material/chevron-up  # 返回顶部图标
-    previous: material/chevron-left  # 上一页图标
-    next: material/chevron-right  # 下一页图标
+    repo: fontawesome/brands/github
+    logo: material/robot-confused-outline
+    menu: material/menu
+    close: material/close
+    top: material/chevron-up
+    previous: material/chevron-left
+    next: material/chevron-right
   
 extra_css:
   - stylesheets/fonts.css
   - stylesheets/mathjax.css
   - stylesheets/quest-panel.css
   - stylesheets/download-btn.css
-  - stylesheets/smooth-scroll.css
   
 extra_javascript:
   - javascripts/mathjax-lazy.js
@@ -95,6 +85,7 @@ markdown_extensions:
 
 plugins:
   - search  
+  - statistics
 
 nav:
   - 首页: 
