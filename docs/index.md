@@ -1,3 +1,5 @@
+<style> .md-typeset h1:first-of-type { display: none; } </style>
+
 # 「主线任务」
 
 <div class="quest-panel">
@@ -44,9 +46,9 @@
 <div class="quest-rewards">
 <div class="quest-rewards-title">任务奖励</div>
 
-<div class="quest-reward-item">解锁<strong>状态</strong>「原来你也在学这个」</div>
-<div class="quest-reward-item">获得<strong>称号</strong>「同道之人」</div>
-<div class="quest-reward-item"><strong>地图探索度</strong>随阅读深度上升</div>
+<div class="quest-reward-item">解锁 <strong>状态</strong> 「原来你也在学这个」</div>
+<div class="quest-reward-item">获得 <strong>称号</strong> 「同道之人」</div>
+<div class="quest-reward-item"><strong>地图探索度</strong> 随阅读深度上升</div>
 </div>
 
 <div class="quest-hint">

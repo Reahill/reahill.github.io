@@ -1,9 +1,7 @@
 # 下载测试
 
-本页面用于测试文件下载功能。
+本页面用于测试文件下载功能。  
 
-## PDF 文件下载
-
-点击下方按钮下载测试 PDF 文件：
+点击下方按钮下载测试 PDF 文件：  
 
 [下载 Hello World!.pdf](Hello%20World!.pdf){: .download-btn }

@@ -44,15 +44,21 @@ theme:
     top: material/chevron-up
     previous: material/chevron-left
     next: material/chevron-right
+  font:
+    text: false
+    code: JetBrains Mono
   
 extra_css:
-  - stylesheets/fonts.css
-  - stylesheets/mathjax.css
-  - stylesheets/quest-panel.css
+  - https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css
+  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css
   - stylesheets/download-btn.css
-  
+  - stylesheets/fonts.css
+  - stylesheets/index.css
+
 extra_javascript:
-  - javascripts/mathjax-lazy.js
+  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js
+  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js
+  - javascripts/katex.js
 
 markdown_extensions:  
   - admonition
@@ -85,11 +91,10 @@ markdown_extensions:
 
 plugins:
   - search  
-  - statistics
 
 nav:
   - 首页: 
-    - index.md
+    - 「主线任务」: index.md
     - 观前提示: preview.md
     - 数学公式测试: test/test_math.md
     - 下载测试: test/test_download.md
