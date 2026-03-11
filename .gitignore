@@ -1,3 +1,0 @@
-site/
-# Ignore large PDF files
-docs/textbooks/**/*.pdf
