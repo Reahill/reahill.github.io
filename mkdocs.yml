@@ -2,16 +2,22 @@ site_name: Reahill's Notebook
 site_url: https://reahill.github.io/
 theme:
   name: material
-  font: false
+  language: zh
+  font: 
+    text: Noto Serif SC
+  icons:
+    logo: material/robot
   features:
     - navigation.tabs
-    - navigation.sections
     - navigation.top
     - navigation.tracking
+    - navigation.prune
     - toc.follow
     - search.suggest
     - search.highlight
     - content.code.copy
+    - navigation.indexes
+    - navigation.instant
   palette:
     - scheme: default
       primary: black
@@ -25,19 +31,33 @@ theme:
       toggle:
         icon: material/weather-night
         name: Switch to light mode
-
-extra_css:
-  - stylesheets/extra.css
-  - https://cdn.jsdelivr.net/npm/katex@0/dist/katex.min.css
-  - https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css
-
+  
 markdown_extensions:
   - pymdownx.arithmatex:
       generic: true
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - toc:
+      permalink: true
 
+extra_css:
+  - css/extra.css
+  - https://cdn.jsdelivr.net/npm/katex@0/dist/katex.min.css
+  
 extra_javascript:
-  - javascripts/katex.js
+  - js/katex.js
   - https://cdn.jsdelivr.net/npm/katex@0/dist/katex.min.js
   - https://cdn.jsdelivr.net/npm/katex@0/dist/contrib/auto-render.min.js
 
-
+nav:
+  - Home: 
+    - index.md
+  - Foundation: 
+    - foundation/index.md
+    - math: 
+      - foundation/math/index.md
+      - 微积分（甲）Ⅱ: foundation/math/calculus-2/calculus-2.md
+      - 常微分方程: foundation/math/ode/ode.md
+    - physics: 
+      - foundation/physics/index.md

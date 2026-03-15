@@ -1,0 +1,12 @@
+.md-typeset {
+      line-height: 2;
+    }
+
+.md-typeset .katex-display,
+.md-typeset .katex-display > .katex {
+      font-size: 1em;
+    }
+
+:root {
+    --md-code-font: 'JetBrains Mono', Consolas;
+    }

@@ -1,1 +1,3 @@
-# This is Reahill's Notebook
+# Home
+
+Reahill's Notebook
