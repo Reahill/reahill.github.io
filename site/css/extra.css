@@ -2,16 +2,10 @@
       line-height: 2;
     }
 
-.md-typeset .katex,
-.md-typeset .katex-display {
-  line-height: 1.2;
-}
-
-.md-typeset .katex-display {
-  margin: 0.8em 0;
-  overflow-x: auto;
-  overflow-y: hidden;
-}
+.md-typeset .katex-display,
+.md-typeset .katex-display > .katex {
+      font-size: 1em;
+    }
 
 :root {
     --md-code-font: 'JetBrains Mono', Consolas;
