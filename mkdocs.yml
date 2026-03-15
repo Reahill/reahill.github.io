@@ -1,12 +1,14 @@
 site_name: Reahill's Notebook
 site_url: https://reahill.github.io/
+repo_url: https://github.com/Reahill/reahill.github.io
+repo_name: reahill.github.io
 theme:
   name: material
   language: zh
-  font: 
-    text: Noto Serif SC
-  icons:
-    logo: material/robot
+  font: false
+  icon:
+    logo: material/robot-dead-outline
+    repo: fontawesome/brands/git-alt
   features:
     - navigation.tabs
     - navigation.top
@@ -35,15 +37,23 @@ theme:
 markdown_extensions:
   - pymdownx.arithmatex:
       generic: true
+  - tables
   - admonition
   - pymdownx.details
   - pymdownx.superfences
   - toc:
       permalink: true
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
 
 extra_css:
   - css/extra.css
   - https://unpkg.com/katex@0/dist/katex.min.css
+  - https://unpkg.com/@fontsource/jetbrains-mono@5.2.6/latin-400.css
+  - https://unpkg.com/@fontsource/jetbrains-mono@5.2.6/latin-700.css
+  - https://cdn.staticfile.org/lxgw-wenkai-webfont/1.6.0/style.css
   
 extra_javascript:
   - js/katex.js
