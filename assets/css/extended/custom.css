@@ -1,0 +1,29 @@
+/* 文章内容字体 */
+.post-content {
+    font-family: "JetBrains Mono", "LXGW WenKai Screen", sans-serif;
+}
+
+/* 文章标题字体 */
+.post-title {
+    font-family: "JetBrains Mono", "LXGW WenKai Screen", sans-serif;
+}
+
+/* 首页文章列表标题字体 */
+.post-entry .entry-header {
+    font-family: "JetBrains Mono", "LXGW WenKai Screen", sans-serif;
+}
+
+/* 全局字体 */
+body {
+    font-family: "JetBrains Mono", "LXGW WenKai Screen", sans-serif;
+}
+
+/* 菜单项间距 */
+.menu {
+    column-gap: 1.5rem;
+}
+
+/* 导航栏不换行 */
+.header-nav {
+    flex-wrap: nowrap;
+}

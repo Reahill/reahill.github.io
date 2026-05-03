@@ -1,0 +1,28 @@
+{{- with site.Params.homeInfoParams }}
+<article class="first-entry home-info">
+    <header class="entry-header">
+        {{- if .imageUrl -}}
+        {{- $img := "" }}
+        {{- if not (urls.Parse .imageUrl).IsAbs }}
+            {{- $img = resources.Get .imageUrl }}
+        {{- end }}
+        {{- if $img }}
+            {{- $img = $img.Resize "120x120" }}
+            <img class="home-info-avatar" draggable="false" src="{{ $img.Permalink }}" alt="avatar"
+                height="120" width="120" style="border-radius:50%;margin-bottom:12px;" />
+        {{- else }}
+            <img class="home-info-avatar" draggable="false" src="{{ .imageUrl | absURL }}" alt="avatar"
+                height="120" width="120" style="border-radius:50%;margin-bottom:12px;" />
+        {{- end }}
+        {{- end }}
+        <h1>{{ .Title | markdownify }}</h1>
+    </header>
+    <div class="entry-content md-content">
+        {{ $opts := dict "display" "block" }}
+        {{ .Content | $.Page.RenderString $opts }}
+    </div>
+    <footer class="entry-footer">
+        {{ partial "social_icons.html" (dict "align" site.Params.homeInfoParams.AlignSocialIconsTo) }}
+    </footer>
+</article>
+{{- end -}}

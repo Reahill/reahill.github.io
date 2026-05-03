@@ -1,0 +1,56 @@
+baseURL: https://reahill.github.io/
+locale: zh
+defaultContentLanguage: zh
+title: Reahill's Blog
+theme: PaperMod
+
+params:
+  mainSections:
+    - posts
+  author: Reahill
+  assets:
+    favicon: favicon.ico
+  homeInfoParams:
+    enabled: true
+    title: Reahill's Blog
+    content: 总之这是一句话
+    imageUrl: img/avatar.jpg
+  fuseOpts:
+    isCaseSensitive: false
+    shouldSort: true
+    location: 0
+    distance: 1000
+    threshold: 0.4
+    minMatchCharLength: 0
+    keys:
+      - title
+      - permalink
+      - summary
+      - content
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+
+menu:
+  main:
+  - name: 文章
+    pageRef: /posts
+    weight: 10
+  - name: 分类
+    pageRef: /categories
+    weight: 20
+  - name: 标签
+    pageRef: /tags
+    weight: 30
+  - name: 归档
+    pageRef: /archives
+    weight: 40
+  - name: 关于
+    pageRef: /about
+    weight: 50
+  - name: 搜索
+    pageRef: /search
+    weight: 60
