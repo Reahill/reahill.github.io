@@ -1,0 +1,4 @@
+baseURL = 'https://reahill.github.io/'
+locale = 'zh-cn'
+title = "Reahill's Blog"
+theme = 'stack'
