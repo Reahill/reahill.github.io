@@ -1,5 +1,5 @@
 ---
-title: "搜索"
+title: "Search"
 layout: "search"
 placeholder: "输入关键词"
 ---

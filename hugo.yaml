@@ -13,7 +13,7 @@ params:
   homeInfoParams:
     enabled: true
     title: Reahill's Blog
-    content: 总之这是一句话
+    content: 我想说很多东西，但这里空白太小放不下
     imageUrl: img/avatar.jpg
   fuseOpts:
     isCaseSensitive: false
@@ -27,6 +27,24 @@ params:
       - permalink
       - summary
       - content
+
+markup:
+  goldmark:
+    extensions:
+      passthrough:
+        enable: true
+        delimiters:
+          block: [['$$', '$$'], ['\\[', '\\]']]
+          inline: [['$', '$'], ['\\(', '\\)']]
+    renderer:
+      unsafe: true
+    parser:
+      attribute:
+        block: true
+        title: true
+  highlight:
+    guessSyntax: true
+    style: dracula
 
 outputs:
   home:
